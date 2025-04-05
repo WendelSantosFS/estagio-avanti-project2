@@ -3,15 +3,20 @@ import styles from './styles.module.css'
 import useUserProfile from '../../hooks/useUserProfile';
 import RenderProfile from '../RenderProfile';
 
+function Loading( {text}: {text: string}) {
+    return <p>{text}</p>
+}
 
 const SearchUser = () => {
     const [user, setUser] = useState('')
-    const [profile, setProfile]:any  = useState([])
+    const [textLoading, setTextLoading] = useState('')
+    const [profile, setProfile]  = useState<any[]>([])
 
     const { fetchApi } = useUserProfile()
 
     const handleUser = async(user: string) => {
         profile.pop()
+        setTextLoading('Loading...')
 
         const userFormated = user.replace(' ', '')
 
@@ -19,10 +24,9 @@ const SearchUser = () => {
             return
         } else {
             let result = await fetchApi(userFormated)
-            profile.push(result)
-            setUser('')
+            setProfile([...profile, result])
+            setTextLoading('')
         }
-        
     }
 
     return (
@@ -49,7 +53,8 @@ const SearchUser = () => {
                 </button>
             </div>         
 
-            { profile.length === 0 ? ''  : <RenderProfile obj={profile}/>}
+            <Loading text={textLoading}/>
+            { profile.length === 0 ? null  : <RenderProfile obj={profile}/>}
             
         </div>
     )
