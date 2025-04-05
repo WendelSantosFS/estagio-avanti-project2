@@ -1,0 +1,31 @@
+.renderProfile {
+    width: 804px;
+    height: 257px;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.textRender {
+    width: 460px;
+}
+.renderProfile img {
+    width: 190px;
+    height: 190px;
+    border-radius: 100%;
+    border: 2px solid #005cff;
+}
+
+.renderProfile h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #005CFF;
+}
+.renderProfile p {
+    font-size: 15px;
+    color: #000;
+}

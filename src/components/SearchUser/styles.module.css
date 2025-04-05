@@ -1,0 +1,45 @@
+.groupSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2.5rem;
+}
+
+.searchUser {
+    height: 62px;
+    width: 503px;
+    background-color: pink;
+    position: relative;
+    border-radius: 10px;
+}
+
+.textInput {
+    background-color: #DDDDDD;
+    color: #000;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+
+    padding-left: 1rem;
+}
+
+.btnSearch {
+    position: absolute;
+    right: -20px;
+    top: 1px;
+
+    height: 62px;
+    width: 62px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    background-color: #005CFF;
+}
+.btnSearch svg {
+    width: 25px;
+    height: 25px;
+    background-color: #005CFF;
+}
