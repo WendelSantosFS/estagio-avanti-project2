@@ -43,3 +43,10 @@
     height: 25px;
     background-color: #005CFF;
 }
+
+.btnSearch:hover {
+    background-color: #2c14a2;
+}
+.btnSearch svg:hover {
+    background-color: #2c14a2;
+}

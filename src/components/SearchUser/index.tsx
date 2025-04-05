@@ -7,6 +7,7 @@ import RenderProfile from '../RenderProfile';
 const SearchUser = () => {
     const [user, setUser] = useState('')
     const [profile, setProfile]:any  = useState([])
+
     const { fetchApi } = useUserProfile()
 
     const handleUser = async(user: string) => {
@@ -19,8 +20,6 @@ const SearchUser = () => {
         } else {
             let result = await fetchApi(userFormated)
             profile.push(result)
-            console.log('Adicionado ao profile')
-            console.log(profile)
             setUser('')
         }
         
@@ -52,7 +51,6 @@ const SearchUser = () => {
 
             { profile.length === 0 ? ''  : <RenderProfile obj={profile}/>}
             
-
         </div>
     )
 }
