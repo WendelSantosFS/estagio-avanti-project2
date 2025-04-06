@@ -18,14 +18,21 @@ const SearchUser = () => {
         profile.pop()
         setTextLoading('Loading...')
 
-        const userFormated = user.replace(' ', '')
+        const userFormated = user.replace(/ /g, '') //  "/ /g" = é uma Expressão regular, foi usado para termos uma maior compatibilidade.
+        console.log(userFormated)
 
-        if (userFormated.length == 0) {
-            return
+        if (userFormated.length === 0) {
+            return;
         } else {
             let result = await fetchApi(userFormated)
             setProfile([...profile, result])
             setTextLoading('')
+
+            if (result === 'Not Found') {
+                setTimeout( () => {
+                    setProfile([])
+                }, 3000)
+            }
         }
     }
 
@@ -54,7 +61,7 @@ const SearchUser = () => {
             </div>         
 
             <Loading text={textLoading}/>
-            { profile.length === 0 ? null  : <RenderProfile obj={profile}/>}
+            { profile.length === 0 ? null  : <RenderProfile obj={profile}/> }
             
         </div>
     )
