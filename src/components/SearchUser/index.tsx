@@ -16,19 +16,20 @@ const SearchUser = () => {
 
     const handleUser = async(user: string) => {
         profile.pop()
-        setTextLoading('Loading...')
+        
 
         const userFormated = user.replace(/ /g, '') //  "/ /g" = é uma Expressão regular, foi usado para termos uma maior compatibilidade.
-        console.log(userFormated)
 
         if (userFormated.length === 0) {
             return;
         } else {
+            setTextLoading('Loading...')
             let result = await fetchApi(userFormated)
             setProfile([...profile, result])
             setTextLoading('')
 
             if (result === 'Not Found') {
+                setUser('')
                 setTimeout( () => {
                     setProfile([])
                 }, 3000)
