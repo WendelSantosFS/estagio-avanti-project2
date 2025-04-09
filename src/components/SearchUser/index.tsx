@@ -28,8 +28,14 @@ const SearchUser = () => {
             setProfile([...profile, result])
             setTextLoading('')
 
+            const circle2  = document.querySelector('._circle2Internal_9d4h6_111')
+            circle2?.classList.remove(`_positionCircleRight1_9d4h6_101`)
+            circle2?.classList.add(`circle2Search`)
+
             if (result === 'Not Found') {
                 setUser('')
+                circle2?.classList.add(`_positionCircleRight1_9d4h6_101`)
+                circle2?.classList.remove(`circle2Search`)
                 setTimeout( () => {
                     setProfile([])
                 }, 3000)

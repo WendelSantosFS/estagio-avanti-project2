@@ -1,6 +1,5 @@
 import styles from "./styles.module.css"
 
-
 function NotFoundUser () {
     return(
         <div className={styles.notFound}>
@@ -8,11 +7,5 @@ function NotFoundUser () {
         </div>
     )
 }
-
-
-
-
-
-
 
 export default NotFoundUser;

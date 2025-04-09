@@ -1,7 +1,7 @@
 import NotFoundUser from '../NotFoundUser';
 import styles from './styles.module.css'
 
-function RenderProfile ( {obj}: {obj: any}  ) {  //{ avatar, name, bio}: {avatar: string, name: string, bio: string | null}
+function RenderProfile ( {obj}: {obj: any}  ) {
 
     if (obj.length === 0) {
         return;
